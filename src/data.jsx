@@ -21,7 +21,7 @@ useEffect(() => {
 }, []);
 
 function Getlist(){
-  fetch("http://localhost:5000/api/products").then((result)=>{
+  fetch("https://newa-kohl.vercel.app/api/products").then((result)=>{
       result.json().then((resp)=>{
         setdata(resp)
         Getlist()
@@ -41,7 +41,7 @@ setTimeout(() => {
   
 }
 function aler(){
-    fetch(`http://localhost:5000/${id}`,{
+    fetch(`https://newa-kohl.vercel.app/${id}`,{
     method:'DELETE'
   }).then((result)=>{
     result.json().then(resp=>{
@@ -62,7 +62,7 @@ setnewState(true)
 function updatedata(){
  let data={name,price,company,feature}
 
- fetch(`http://localhost:5000/update/${newid}`, {
+ fetch(`https://newa-kohl.vercel.app/update/${newid}`, {
   method: 'PUT',
   headers:{
     'Accept':'application/json',
@@ -125,7 +125,7 @@ function Swodata(){
               <option> samsung</option>
               <option> mi</option>
               <option> dell</option>
-            </select><br />
+            </select> <br/>
             <input style={{width:"100%"}}  type="text" value={price} onChange={(e)=>setNewprice(e.target.value)} /><br />
             <input  style={{width:"100%"}} type="checkbox" defaultChecked={feature}  onClick={()=>setfeature(!feature)}/><br />
           <button onClick={updatedata} >Update</button>

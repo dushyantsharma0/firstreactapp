@@ -8,7 +8,7 @@ function AppData(){
     const [feature , setFeature ] = useState(false);
    
    function Save(){
-    let url="http://localhost:5000/"
+    let url="https://newa-kohl.vercel.app/"
     
     let data={name,price,feature,company}
      fetch(url,{
